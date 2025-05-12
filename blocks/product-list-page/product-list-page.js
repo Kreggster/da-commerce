@@ -3,12 +3,13 @@ import { getConfigValue } from '../../scripts/configs.js';
 import { rootLink } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
+  const blockConfig = readBlockConfig(block);
+  const { category, urlpath, type } = blockConfig;
+
+  console.log("block config", blockConfig); // eslint-disable-line
   // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
   await import('/scripts/widgets/search.js');
 
-  const blockConfig = readBlockConfig(block);
-  const { category, urlpath, type } = blockConfig;
-  console.log("block config", blockConfig); // eslint-disable-line
   block.textContent = '';
 
   const storeDetails = {
