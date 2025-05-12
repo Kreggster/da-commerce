@@ -8,7 +8,7 @@ export default async function decorate(block) {
 
   const blockConfig = readBlockConfig(block);
   const { category, urlpath, type } = blockConfig;
-  console.log("block config", blockConfig);
+  console.log("block config", blockConfig); // eslint-disable-line
   block.textContent = '';
 
   const storeDetails = {
