@@ -6,7 +6,9 @@ export default async function decorate(block) {
   // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
   await import('/scripts/widgets/search.js');
 
-  const { category, urlpath, type } = readBlockConfig(block);
+  const blockConfig = readBlockConfig(block);
+  const { category, urlpath, type } = blockConfig;
+  console.log("block config", blockConfig);
   block.textContent = '';
 
   const storeDetails = {
